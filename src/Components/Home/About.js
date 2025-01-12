@@ -64,7 +64,7 @@ const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
       color: "#fff",
       display: "flex",
       gap:'5%',
-      width:"45%",
+      width:isMobile?"":"45%",
       flexDirection:'row',
       background: "linear-gradient(to right, #11998e, #38ef7d)",
     };
@@ -75,8 +75,9 @@ const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
       color: "#fff",
       display: "flex",
       gap:'5%',
-      width:"45%",
+      width:isMobile?"":"45%",
       flexDirection:'row',
+      marginTop:isMobile?"10px":"",
       background: "linear-gradient(to right, #f85032, #e73827)",
     };
   
@@ -92,7 +93,7 @@ const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
     };
 
     const imageStyle = {
-      width: "128px",
+      width: isMobile?"119px":"128px",
       height: "128px",
       borderRadius:'6px',
       objectFit: "cover",

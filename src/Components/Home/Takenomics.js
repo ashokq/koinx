@@ -1,6 +1,6 @@
 import React from "react";
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
-import { Pie } from "react-chartjs-2";
+import { Doughnut } from "react-chartjs-2";
 import ApexChart from "./RingChart";
 import ReactApexChart from 'apexcharts';
 
@@ -93,6 +93,8 @@ const [state, setState] = React.useState({
       display: "flex",
       justifyContent: "center",
       marginBottom: "20px",
+      height:'300px',
+      width:'300px'
     },
     paragraph: {
       color: "#3E424A",
@@ -105,10 +107,10 @@ const [state, setState] = React.useState({
     <div style={styles.container}>
       <h2 style={styles.header}>Tokenomics</h2>
       <h4 style={styles.subHeader}>Initial Distribution</h4>
-      {/* <div style={styles.chartContainer}>
-        <Pie data={data} options={options} />
-      </div> */}
-     <ReactApexChart options={state.options} series={state.series} type="donut" width={380} />
+      <div style={styles.chartContainer}>
+        <Doughnut data={data} options={options} />
+      </div>
+     {/* <ReactApexChart options={state.options} series={state.series} type="donut" width={380} /> */}
       <p style={styles.paragraph}>
         Lorem ipsum dolor sit amet consectetur. Cras aliquet tristique ornare vestibulum nunc dignissim vel
         consequat. Leo etiam nascetur bibendum amet enim sit eget leo amet. At metus orci augue fusce eleifend lectus

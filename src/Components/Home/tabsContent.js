@@ -1,15 +1,26 @@
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
 
 
 const TaskTabs = () => {
+    const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+        
+          useEffect(() => {
+            const handleResize = () => setIsMobile(window.innerWidth <= 768);
+            window.addEventListener('resize', handleResize);
+            return () => window.removeEventListener('resize', handleResize);
+          }, []);
     const [activeTab, setActiveTab] = useState('Overview');
 
     const tabs = ['Overview', 'Fundamentals', 'News Insights', 'Sentiments', 'Team', 'Technicals', 'Tokenomics'];
+    const tabsStyle= {
+        display: isMobile?"block":'flex',
+        borderBottom: '2px solid #ddd',
+    }
 
     return (
         <div style={styles.tabsContainer}>
             {/* Tab Buttons */}
-            <div style={styles.tabs}>
+            <div style={tabsStyle}>
                 {tabs.map((tab) => (
                     <button
                         key={tab}
@@ -28,7 +39,7 @@ const TaskTabs = () => {
             </div> */}
         </div>
     );
-};
+}
 
 // Inline CSS styles
 const styles = {
@@ -37,7 +48,7 @@ const styles = {
         marginTop:"15px"
     },
     tabs: {
-        display: 'flex',
+        // display: isMobile?"block":'flex',
         borderBottom: '2px solid #ddd',
     },
     tab: {

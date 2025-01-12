@@ -51,13 +51,13 @@ const Home = () =>{
         <div style={isMobile?styles.mainDivMobile:styles.mainDiv}>
            <div style={styles.leftDiv}>
              <BTCChart/>
-             {/* <TaskTabs/> */}
+             <TaskTabs/>
              <PerformanceCard/> 
              <Sentiment/> 
               <AboutBitcoin/> 
               <Tokenomics/>
              <Team/>
-             <Responsive/>
+             {/* <Responsive/> */}
              {/* <AlsoLike/> */}
            </div>
            <div style={styles.rightDiv}>
