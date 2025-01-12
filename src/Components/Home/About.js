@@ -43,8 +43,8 @@ const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
   
     const cardContainerStyle = {
       display: isMobile?"block":"flex",
-      gap: "20px",
-      marginBottom: "20px",
+      justifyContent:'space-between'
+      // marginBottom: "20px",
     };
   
     const cardStyle = {
@@ -58,17 +58,30 @@ const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
     };
   
     const greenCardStyle = {
-      ...cardStyle,
+      // ...cardStyle,
+      padding: "10px",
+      borderRadius: "8px",
+      color: "#fff",
+      display: "flex",
+      gap:'5%',
+      width:"45%",
+      flexDirection:'row',
       background: "linear-gradient(to right, #11998e, #38ef7d)",
     };
   
     const redCardStyle = {
-      ...cardStyle,
+      padding: "10px",
+      borderRadius: "8px",
+      color: "#fff",
+      display: "flex",
+      gap:'5%',
+      width:"45%",
+      flexDirection:'row',
       background: "linear-gradient(to right, #f85032, #e73827)",
     };
   
     const buttonStyle = {
-      marginTop: "10px",
+      // marginTop: "2px",
       padding: "10px 20px",
       backgroundColor: "#fff",
       color: "#000",
@@ -77,6 +90,19 @@ const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
       cursor: "pointer",
       alignSelf: "flex-start",
     };
+
+    const imageStyle = {
+      width: "128px",
+      height: "128px",
+      borderRadius:'6px',
+      objectFit: "cover",
+    };
+
+    const cardFont={
+      fontSize:'20px',
+      fontWeight:600,
+
+    }
   
     return (
       <div style={containerStyle}>
@@ -91,7 +117,7 @@ const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
             19.24 M BTC and a max supply of 21 M BTC.
           </p>
         </div>
-  
+        <hr></hr>
         <div style={sectionStyle}>
           <h3 style={subtitleStyle}>Lorem ipsum dolor sit amet</h3>
           <p style={paragraphStyle}>
@@ -111,24 +137,27 @@ const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
             pulvinar nunc risus. Ullamcorper dui.
           </p>
         </div>
-  
+  <hr></hr>
+  <h2 style={titleStyle}>Already Holding Bitcoin?</h2>
         <div style={cardContainerStyle}>
           <div style={greenCardStyle}>
+          <img src="https://s3-alpha-sig.figma.com/img/4a59/7cf5/e39cee97d83ba894aa0c105133924b9b?Expires=1737331200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=BIpcdewbeHvpF0MrAHY9Lvoj0pca~n77kDxgd55mI~LL6DhUVkQkiHr5pBEMM7AtTgJ3r50AD5rDtCXdoDGT56v03G1oM0r4wyjQQsqlRn7plrafv4xMISOsNszaNThUXSJrUlWt~XLXr7r86YIkB5PwI3lVDyklbGy~48E2qc86bk25uWBfyp2yk-BGZORYlvmG4DNJRnQ8qtcIJ8nj1kxPzIKT4O676Cdkfd09WRDGFQLhBevRjdipHN7UW6y1LZz651u9k7qWHX-nCLWNBhpwzx4i0aH4FddzREaKCwnmK~DAkruz1qAfUnsFZLCClIobUtEFP58DdJkB8Iyc1A__" alt="green" style={imageStyle} />
             <div>
-              <h4>Calculate your Profits</h4>
-              <p>Check how</p>
+              <p style={cardFont}>Calculate your <br></br>Profits</p>
+              <button style={buttonStyle}>Check Now →</button>
             </div>
-            <button style={buttonStyle}>Check Now →</button>
+            
           </div>
           <div style={redCardStyle}>
+          <img src="https://s3-alpha-sig.figma.com/img/b324/e6e3/5c577ca47c764bd8af01d840fe7ffccb?Expires=1737331200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=d4l6utWlIkrTQzqt77v9j0~gF~vbeJRrczq6KNeIyXwZT~GK~Lf~qi4wM95eBzMG3moI5HEb268uf2MKQuKUD6wweZBgLLHTk6QZsDSs8nG7Nz7CiR-h5Iw79zDhEU19rKCbLW~hJ1zjAjS0~-knfUlYgUq6TKJUUkaU0x3gNR0JFYjAUFYU5mGq~tfgaFpijbiNjl5z4AC4OllIoyuSrVGxTQu6~FX2-Fuzr8K3235R65bN7rlrzduhg6fIoYkkdy4zWD2~fnmekMZ5soQX0Vk~S3eDEs8YmPn5A6xFzi~MiO53Xe2K6bBVVtGA-eY-urXUeeYJHhrTlxAmvlSIyA__" alt="green" style={imageStyle} />
             <div>
-              <h4>Calculate your tax liability</h4>
-              <p>Check how</p>
+              <p style={cardFont}>Calculate your tax <br></br>liability</p>
+              <button style={buttonStyle}>Check Now →</button>
             </div>
-            <button style={buttonStyle}>Check Now →</button>
+            
           </div>
         </div>
-  
+  <hr></hr>
         <div style={sectionStyle}>
           <p style={paragraphStyle}>
             Fermentum hendrerit imperdiet nulla viverra faucibus. Sit aliquam
