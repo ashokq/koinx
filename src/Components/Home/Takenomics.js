@@ -1,11 +1,46 @@
 import React from "react";
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
 import { Pie } from "react-chartjs-2";
+import ApexChart from "./RingChart";
+import ReactApexChart from 'apexcharts';
 
 // Register required components for Chart.js
 ChartJS.register(ArcElement, Tooltip, Legend);
 
 const Tokenomics = () => {
+
+const [state, setState] = React.useState({
+      
+        series: [80,20],
+        options: {
+          chart: {
+            width: 380,
+            type: 'donut',
+          },
+          dataLabels: {
+            enabled: false
+          },
+          responsive: [{
+            breakpoint: 480,
+            options: {
+              chart: {
+                width: 200
+              },
+              legend: {
+                show: false
+              }
+            }
+          }],
+          legend: {
+            position: 'right',
+            offsetY: 0,
+            height: 230,
+          }
+        },
+      
+      
+    });
+
   const data = {
     labels: ["Crowdsale investors", "Foundation"],
     datasets: [
@@ -70,9 +105,10 @@ const Tokenomics = () => {
     <div style={styles.container}>
       <h2 style={styles.header}>Tokenomics</h2>
       <h4 style={styles.subHeader}>Initial Distribution</h4>
-      <div style={styles.chartContainer}>
+      {/* <div style={styles.chartContainer}>
         <Pie data={data} options={options} />
-      </div>
+      </div> */}
+     <ReactApexChart options={state.options} series={state.series} type="donut" width={380} />
       <p style={styles.paragraph}>
         Lorem ipsum dolor sit amet consectetur. Cras aliquet tristique ornare vestibulum nunc dignissim vel
         consequat. Leo etiam nascetur bibendum amet enim sit eget leo amet. At metus orci augue fusce eleifend lectus
