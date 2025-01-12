@@ -14,7 +14,7 @@ const styles = {
     color: "#fff",
     borderRadius: "15px",
     padding: "20px",
-    maxWidth: "100%",
+   
     textAlign: "center",
     boxShadow: "0 4px 10px rgba(0, 0, 0, 0.2)",
     fontFamily: "Arial, sans-serif",

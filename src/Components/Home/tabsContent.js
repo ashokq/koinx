@@ -22,10 +22,10 @@ const TaskTabs = () => {
             </div>
 
             {/* Tab Content */}
-            <div style={styles.tabContent}>
+            {/* <div style={styles.tabContent}>
                 <h2>{activeTab} Content</h2>
                 <p>This is the content for the {activeTab} section.</p>
-            </div>
+            </div> */}
         </div>
     );
 };
